@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 
 // const argument = process.argv.slice(2);
-const argument = process.argv[2];
+// const argument = process.argv[2];
 
 const createFileWithMessage = async (message) => {
   const date = new Date();
@@ -29,9 +29,12 @@ const createFileWithMessage = async (message) => {
   try {
     // await fs.writeFile(path.join(directory, filename), message);
     await fs.appendFile(path.join(directory, filename), '\n' + message);
+    return path.join(directory, filename);
   } catch (error) {
     console.error(error);
   }
 };
 
-createFileWithMessage(argument);
+export { createFileWithMessage };
+
+// createFileWithMessage(argument);

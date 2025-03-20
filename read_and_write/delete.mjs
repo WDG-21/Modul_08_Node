@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 
-const filepath = process.argv[2];
+// const filepath = process.argv[2];
 
 const deleteFileByName = async (filepath) => {
   try {
@@ -11,4 +11,6 @@ const deleteFileByName = async (filepath) => {
   }
 };
 
-deleteFileByName(filepath);
+export { deleteFileByName };
+
+// deleteFileByName(filepath);
